@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AFR — Autonomous Fire Response Robot | Sarvar Namozov</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="module" src="https://unpkg.com/@google/model-viewer@3.4.0/dist/model-viewer.min.js"></script>
+<link rel="stylesheet" href="style.css">
+<style>
+  .back-link { display: inline-flex; align-items: center; gap: 8px; color: var(--gray); font-size: 0.88rem; font-weight: 500; margin-bottom: 30px; }
+  .back-link:hover { color: var(--red); }
+  .gallery-section { margin-bottom: 60px; }
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .gallery-box {
+    aspect-ratio: 4/3;
+    background: var(--panel);
+    border: 1.5px dashed var(--line);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--gray-light);
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 12px;
+  }
+  .video-box {
+    aspect-ratio: 16/9;
+    background: var(--panel);
+    border: 1.5px dashed var(--line);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-light);
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  .page-hero { padding-top: 40px; padding-bottom: 50px; }
+  .page-hero h1 { font-size: clamp(2rem, 5vw, 3rem); }
+</style>
+</head>
+<body>
+
+<header class="nav reveal">
+  <span class="nav-logo">SARVAR<span class="dot">.</span></span>
+  <nav class="nav-links">
+    <a href="index.html#about">Men haqimda</a>
+    <a href="index.html#skills">Ko'nikmalar</a>
+    <a href="index.html#projects">Loyihalar</a>
+    <a href="index.html#contact">Bog'lanish</a>
+  </nav>
+</header>
+
+<section class="page-hero">
+  <a href="index.html#projects" class="back-link reveal">← Bosh sahifaga qaytish</a>
+  <p class="eyebrow reveal">FEATURED PROJECT</p>
+  <h1 class="reveal">AFR — Autonomous<br>Fire Response Robot</h1>
+  <p class="hero-sub reveal" style="margin-top:18px;">AFR — yong'inni dastlabki bosqichida aniqlash, hodisa joyiga mustaqil harakatlanish va birlamchi yong'inni bartaraf etishga mo'ljallangan avtonom mobil robot.</p>
+</section>
+
+<section>
+  <div class="featured-split reveal">
+    <div class="ps-card">
+      <p class="ps-label">Problem</p>
+      <p>Yong'inning dastlabki bosqichida tezkor javob berilmasligi natijasida kichik yong'inlar qisqa vaqt ichida katta talafotlarga olib kelmoqda.</p>
+    </div>
+    <div class="ps-card">
+      <p class="ps-label">Solution</p>
+      <p>AFR yong'inni aniqlaydi, hodisa joyiga mustaqil harakatlanadi va o'rnatilgan o'chirish tizimi yordamida yong'inning dastlabki bosqichini bartaraf etadi.</p>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <p class="section-eyebrow reveal">// 3D MODEL</p>
+  <div class="model-viewer-wrap reveal" id="modelWrap">
+    <div class="model-placeholder" id="modelPlaceholder">
+      <span>3D MODEL HALI QO'SHILMAGAN<br><small>SolidWorks'dan .glb formatida eksport qilib, <code>models/afr.glb</code> qilib joylang</small></span>
+    </div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <p class="section-eyebrow reveal">// RENDERLAR</p>
+  <div class="gallery-grid reveal">
+    <div class="gallery-box">RENDER 1<br><small>rasm qo'shing</small></div>
+    <div class="gallery-box">RENDER 2<br><small>rasm qo'shing</small></div>
+    <div class="gallery-box">RENDER 3<br><small>rasm qo'shing</small></div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <p class="section-eyebrow reveal">// CHIZMALAR</p>
+  <div class="gallery-grid reveal">
+    <div class="gallery-box">CHIZMA 1<br><small>rasm qo'shing</small></div>
+    <div class="gallery-box">CHIZMA 2<br><small>rasm qo'shing</small></div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <p class="section-eyebrow reveal">// ELEKTRON SXEMALAR</p>
+  <div class="gallery-grid reveal">
+    <div class="gallery-box">SXEMA 1<br><small>rasm qo'shing</small></div>
+    <div class="gallery-box">SXEMA 2<br><small>rasm qo'shing</small></div>
+  </div>
+</section>
+
+<section class="gallery-section">
+  <p class="section-eyebrow reveal">// ISHLASH VIDEOSI</p>
+  <div class="video-box reveal" id="videoBox">VIDEO HALI QO'SHILMAGAN — videos/afr-demo.mp4 qo'ying</div>
+</section>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <p class="footer-line">Engineering innovative robotic solutions for a safer future.</p>
+    <p class="footer-meta">© <span id="year"></span> Sarvar Namozov</p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+    // 3D model bor-yo'qligini tekshirish
+    fetch("models/afr.glb", { method: "HEAD" })
+      .then((res) => {
+        if (res.ok) {
+          document.getElementById("modelWrap").innerHTML =
+            `<model-viewer src="models/afr.glb" alt="AFR robot 3D modeli" auto-rotate camera-controls shadow-intensity="1" style="width:100%;height:380px;"></model-viewer>`;
+        }
+      })
+      .catch(() => {});
+
+    // Video bor-yo'qligini tekshirish
+    fetch("videos/afr-demo.mp4", { method: "HEAD" })
+      .then((res) => {
+        if (res.ok) {
+          document.getElementById("videoBox").outerHTML =
+            `<video controls style="width:100%;border-radius:10px;"><source src="videos/afr-demo.mp4" type="video/mp4"></video>`;
+        }
+      })
+      .catch(() => {});
+  });
+</script>
+</body>
+</html>
