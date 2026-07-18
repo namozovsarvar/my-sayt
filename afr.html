@@ -27,7 +27,10 @@
     font-size: 0.75rem;
     font-weight: 500;
     padding: 12px;
+    overflow: hidden;
   }
+  .gallery-box img { width: 100%; height: 100%; object-fit: contain; background: #fff; }
+  .gallery-box-wide { grid-column: 1 / -1; aspect-ratio: 16/10; }
   .video-box {
     aspect-ratio: 16/9;
     background: var(--panel);
@@ -88,17 +91,15 @@
 <section class="gallery-section">
   <p class="section-eyebrow reveal">// RENDERLAR</p>
   <div class="gallery-grid reveal">
-    <div class="gallery-box">RENDER 1<br><small>rasm qo'shing</small></div>
-    <div class="gallery-box">RENDER 2<br><small>rasm qo'shing</small></div>
-    <div class="gallery-box">RENDER 3<br><small>rasm qo'shing</small></div>
+    <div class="gallery-box"><img src="assets/afr-render.jpg" alt="AFR render 1"></div>
+    <div class="gallery-box"><img src="assets/afr-infographic.jpg" alt="AFR infografika"></div>
   </div>
 </section>
 
 <section class="gallery-section">
   <p class="section-eyebrow reveal">// CHIZMALAR</p>
   <div class="gallery-grid reveal">
-    <div class="gallery-box">CHIZMA 1<br><small>rasm qo'shing</small></div>
-    <div class="gallery-box">CHIZMA 2<br><small>rasm qo'shing</small></div>
+    <div class="gallery-box gallery-box-wide"><img src="assets/afr-blueprint.jpg" alt="AFR texnik chizmasi — o'lchamlar va proyeksiyalar"></div>
   </div>
 </section>
 
